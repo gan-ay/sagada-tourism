@@ -26,4 +26,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/tourist_spot', function () {
     return view('tourist_spot_branch.index');
-});
+})->name('tourist_spot');

@@ -50,3 +50,29 @@
                             <td>Kiltepan Viewpoint</td>
                             <td>Kiltepan</td>
                             <td>Offers a breathtaking view of the sunrise above the sea of clouds.</td>
+@extends('layouts.dashboard')
+
+@section('content')
+<section class="py-20 bg-gray-50 min-h-screen">
+    <div class="max-w-6xl mx-auto px-6">
+        <h1 class="text-3xl font-bold text-blue-700 mb-6 text-center">Explore Tourist Spots</h1>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow p-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-2">Hanging Coffins</h2>
+                <p class="text-gray-600 text-sm">A famous cultural landmark symbolizing ancient burial traditions.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-2">Bomod-ok Falls</h2>
+                <p class="text-gray-600 text-sm">Majestic waterfall surrounded by lush rice terraces.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6">
+                <h2 class="text-lg font-semibold text-blue-600 mb-2">Sumaguing Cave</h2>
+                <p class="text-gray-600 text-sm">The largest cave in Sagada — perfect for spelunking adventures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
