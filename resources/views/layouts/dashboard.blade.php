@@ -13,6 +13,7 @@
             <a href="{{ route('dashboard') }}" class="text-xl font-semibold text-blue-700">ProyektoBow</a>
             <div class="flex items-center space-x-6">
                 <a href="{{ route('dashboard') }}" class="hover:text-blue-600">Dashboard</a>
+                <a href="{{ route('tours.index') }}" class="hover:text-blue-600">Tours</a>
                 <a href="#" class="hover:text-blue-600">Profile</a>
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf

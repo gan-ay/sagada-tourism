@@ -5,6 +5,7 @@
 		    <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-600">Home</a>
 		    <a href="{{ route('about') }}" class="text-gray-700 hover:text-blue-600">About</a>
 		    <a href="{{ route('contact') }}" class="text-gray-700 hover:text-blue-600">Contact</a>
+		    <a href="{{ route('tours.index') }}" class="text-gray-700 hover:text-blue-600">Tours</a>
 		</nav>
     </div>
 </header>
