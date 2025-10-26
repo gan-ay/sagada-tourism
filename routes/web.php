@@ -26,4 +26,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('tourist_spot', App\Http\Controllers\TouristSpotController::class);
 
+Route::get('/touristspot/{touristSpot}','TouristSpotController@show');
+
 Route::resource('tours', App\Http\Controllers\ToursController::class);
