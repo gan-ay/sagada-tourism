@@ -24,8 +24,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/tourist_spot', function () {
-    return view('tourist_spot_branch.index');
-})->name('tourist_spot');
+Route::resource('tourist_spot', App\Http\Controllers\TouristSpotController::class);
 
 Route::resource('tours', App\Http\Controllers\ToursController::class);
