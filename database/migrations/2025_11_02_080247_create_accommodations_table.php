@@ -9,12 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(){
-        Schema::create('tour_guides', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('contact');
-            $table->string('specialization');
+            $table->string('type');
+            $table->decimal('price_per_night', 8, 2);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tour_guides');
+        Schema::dropIfExists('accommodations');
     }
 };
