@@ -14,6 +14,7 @@
     {{-- Page Content --}}
     <main class="flex-grow flex items-center justify-center">
         {{ $slot ?? '' }}
+        @yield('add-button')
         @yield('content')
     </main>
 

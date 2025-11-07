@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <section class="text-center py-24 px-6 bg-gradient-to-b from-green-50 to-white rounded-2xl shadow-md">

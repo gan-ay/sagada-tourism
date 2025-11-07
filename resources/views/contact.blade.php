@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+e@extends('layouts.master')
+e
 @section('content')
 <section class="text-center py-24 px-6 bg-gradient-to-b from-yellow-50 to-white rounded-2xl shadow-md">
     <h1 class="text-3xl font-bold text-yellow-600 mb-4">Contact Us</h1>

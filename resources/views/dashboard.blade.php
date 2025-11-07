@@ -15,7 +15,7 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6">
-             <a href="{{ route('tourist_spot') }}" 
+             <a href="{{ route('tourist_spot.index') }}"
    class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 block text-left hover:bg-blue-50">
     <h3 class="text-xl font-semibold text-blue-700 mb-2">🗺 Explore</h3>
     <p class="text-gray-600 text-sm">Discover Sagada’s top tourist destinations and heritage spots.</p>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
     <section class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-white px-6 py-16">
