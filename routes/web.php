@@ -35,18 +35,39 @@ Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::cla
 Route::post('/admin/logout', [App\Http\Controllers\Auth\AdminLoginController::class, 'logout'])->name('admin.logout');
 
 // Protected admin routes
-Route::middleware('auth:admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard'); // create this view
-    })->name('admin.dashboard');
+Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function () {
 
-    // other admin routes...
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/guides', function () {
+        return 'Guide list (placeholder)';
+    })->name('guides.index');
+
+    Route::get('/tourists', function () {
+        return 'Tourist list (placeholder)';
+    })->name('tourists.index');
+
+    Route::get('/reservations', function () {
+        return 'Reservation list (placeholder)';
+    })->name('reservations.index');
+
+    Route::get('/packages', function () {
+        return 'Pacage list (placeholder)';
+    })->name('packages.index');
+
 });
+
+Route::middleware('auth:admin')->prefix('admin')->group(function () {
+    
+});
+
 
 // Protected tourist routes (default guard web)
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard'); // existing tourist dashboard
+        return view('dashboard');
     })->name('dashboard');
 
     // other tourist routes...
