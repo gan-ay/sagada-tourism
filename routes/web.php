@@ -23,3 +23,7 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+use App\Http\Controllers\EmployeeController;
+
+Route::resource('employees', EmployeeController::class);
