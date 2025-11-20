@@ -6,15 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up(): void
+    public function up()
     {
         Schema::create('tourists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('contact_info')->nullable();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('contact')->nullable(); // or contact_info if you prefer
             $table->timestamps();
         });
     }
+
 
     public function down(): void
     {

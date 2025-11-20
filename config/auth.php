@@ -38,9 +38,21 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'tourists', // keep default web for tourists (optional)
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'tourists',
+            'hash' => false,
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -60,16 +72,19 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'tourists' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Tourist::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        // keep 'users' if you still want default user provider, or remove if unused
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -87,13 +102,19 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'tourists' => [
+            'provider' => 'tourists',
             'table' => 'password_resets',
             'expire' => 60,
-            'throttle' => 60,
+        ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------

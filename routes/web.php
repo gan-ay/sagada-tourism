@@ -23,3 +23,31 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Tourist (default) auth routes
+Route::get('/login', [App\Http\Controllers\Auth\TouristLoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\TouristLoginController::class, 'login']);
+Route::post('/logout', [App\Http\Controllers\Auth\TouristLoginController::class, 'logout'])->name('logout');
+
+// Admin auth routes
+Route::get('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [App\Http\Controllers\Auth\AdminLoginController::class, 'logout'])->name('admin.logout');
+
+// Protected admin routes
+Route::middleware('auth:admin')->prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard'); // create this view
+    })->name('admin.dashboard');
+
+    // other admin routes...
+});
+
+// Protected tourist routes (default guard web)
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard'); // existing tourist dashboard
+    })->name('dashboard');
+
+    // other tourist routes...
+});
